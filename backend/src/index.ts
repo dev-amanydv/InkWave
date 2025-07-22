@@ -13,6 +13,10 @@ const app = new Hono<{
   }
 }>()
 app.use('/*',cors())
+
+app.get("/api/health", (c) => {
+  return c.json({ status: "ok" }, 200);
+});
 app.route('/api/v1/user', userRouter);
 app.route('/api/v1/blog', blogRouter);
 
