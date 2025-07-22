@@ -14,6 +14,7 @@ const app = new Hono<{
 }>()
 app.use('/*',cors())
 
+
 app.get("/api/health", (c) => {
   return c.json({ status: "ok" }, 200);
 });
